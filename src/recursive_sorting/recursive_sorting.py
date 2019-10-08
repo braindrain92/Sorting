@@ -3,7 +3,18 @@ def merge( arrA, arrB ):
     elements = len( arrA ) + len( arrB )
     merged_arr = [0] * elements
     # TO-DO
-    
+
+    current_index = 0
+    while len(arrA) > 0 or len(arrB) > 0:
+        if len(arrA) == 0:
+            merged_arr[current_index] = arrB.pop(0)
+        elif len(arrB) == 0:
+            merged_arr[current_index] = arrA.pop(0)
+        elif arrA[0] < arrB[0]:
+            merged_arr[current_index] = arrA.pop(0)
+        else:
+            merged_arr[current_index] = arrB.pop(0)
+        current_index += 1
     return merged_arr
 
 
@@ -11,6 +22,9 @@ def merge( arrA, arrB ):
 def merge_sort( arr ):
     # TO-DO
 
+    if len(arr) < 2:
+        return arr
+    midpoint = len(arr)//2
     return arr
 
 
